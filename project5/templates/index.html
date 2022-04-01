@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% block body %}
+
+<div class = "container" >
+    <div class="row">
+        {% for i in key %}
+        <div class="col-md-4">
+            <div class="card mt-2" style="width: 23rem;height: 27rem ">
+            <img class="card-img-top border border-warning" src="{{i.image.url}}" alt="..." width="400" height="200">
+               <div class="card-body bg-dark border border-primary">
+               <h4 class="card-title text-warning">{{i.name}}</h4>
+               <p class="card-text text-warning">{{i.year}}</p>
+               <a href="{% url 'app5:fun2' i.id %}" class="btn btn-primary">More info</a>
+               </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+{% endblock %}
